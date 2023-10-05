@@ -1,0 +1,590 @@
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    background-color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#btns{
+    background-color: goldenrod;
+    padding: 10px;
+    border-radius: 6px;
+    transition: 0.5s;
+    cursor: pointer;
+    position: fixed;
+    bottom: 25px;
+    opacity: 0;
+    right: 25px;
+    z-index: 1;
+    
+}
+#btns:hover{
+    background-color: rgb(167, 125, 20);
+}
+#btns i{
+    color: black;
+    font-size: 16px;
+}
+
+* {
+    color: whitesmoke;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+    
+}
+::-webkit-scrollbar{
+    background-color: black;
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: aliceblue;
+    border-radius: 10px;
+    height: 15px;
+    cursor: pointer;
+}
+
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+
+}
+
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+
+}
+
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* :start navbar */
+
+nav {
+    position: fixed;
+    width: 100%;
+transition: 0.5s;
+z-index: 1;
+}
+
+nav .container .bars {
+    font-size: 30px;
+    border: 1px solid gainsboro;
+    color: goldenrod;
+    padding: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: none;
+}
+
+nav .container .bars:hover {
+    color: rgb(180, 135, 22);
+
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+}
+
+nav .container img {
+    width: 90px;
+}
+
+nav .container::before {
+    content: '';
+    position: absolute;
+    height: 0.5px;
+    background-color: rgb(211, 208, 208);
+    width: calc(100% - 15px);
+    bottom: -10px;
+}
+
+.container .icons ul {
+    display: flex;
+    list-style: none;
+
+}
+
+.container .icons ul a {
+    text-decoration: none;
+    padding-right: 20px;
+    font-size: 18px;
+    font-weight: normal;
+    transition: 0.3s;
+
+}
+.box{
+    margin-top: 25px !important;
+}
+
+.icons ul li {
+    position: relative;
+}
+
+.container .icons ul li::before {
+    content: '';
+    position: absolute;
+    height: 0px;
+    width: 0%;
+
+    background-color: goldenrod;
+    bottom: -5px;
+    transition: 0.5s;
+}
+
+.container .icons ul li:hover::before {
+    height: 1px;
+    width: calc(100% - 15px);
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    height: 72px;
+    transition: 0.3s;
+}
+
+.cart i {
+    padding-right: 15px;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.container .icons ul li a:hover,
+.cart i:hover {
+    color: goldenrod;
+    cursor: pointer;
+
+}
+
+/* navBar @media */
+
+@media (max-width:990px) {
+    .container .icons {
+        position: fixed;
+        right: -100%;
+        top: 100px;
+        background-color: white;
+        width: 60%;
+        height: 100%;
+        transition: 0.5s;
+    }
+
+    nav .container .bars {
+        display: block;
+    }
+
+    .container .icons ul {
+        display: block;
+    }
+
+    .container .icons ul a {
+        color: rgb(48, 48, 48);
+
+    }
+
+    .container .icons ul li:hover::before {
+        display: none;
+    }
+
+    .container .icons ul li {
+        padding: 10px;
+    }
+}
+
+/* end navBar */
+
+
+
+/* start home */
+.bg-img {
+    background-image: url(../img/bg.png);
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-attachment: fixed;
+}
+
+.container .text h1 {
+    font-weight: bold;
+    font-size: 60px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.container .text p {
+    line-height: 1.8;
+    color: gainsboro;
+}
+
+.container .text .btn {
+    background-color: goldenrod;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.4s;
+    border: none;
+}
+
+.container .text .btn:hover {
+    background-color: rgb(172, 129, 22);
+}
+
+@media (max-width:650px) {
+    .container .text h1 {
+        font-size: 30px;
+    }
+
+}
+
+/* end home */
+
+
+/* start About */
+
+
+.About {
+    padding-top: 100px;
+    padding-bottom: 100px;
+   
+
+}
+
+.header {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+    opacity: 0;
+    transition: 1s;
+}
+
+.About .header span {
+    color: goldenrod;
+}
+
+.About .container {
+border: 1px solid rgb(40, 40, 40);
+display: flex;
+margin-top: 20px;
+justify-content: space-around;
+padding: 0;
+background-color: rgb(31, 31, 31) ;
+border-radius: 6px;
+overflow: hidden;
+align-items: center;
+}
+
+.About .container img {
+    width: 50%;
+    height: 470px;
+    padding: 0;
+ 
+}
+.About .container .info{
+    padding-left: 20px;
+    width: 50%;
+}
+.container .info h2{
+    font-size: 30px;
+    font-weight: bold;
+}
+.info p{
+    font-size: 18px;
+    margin-top: 15px;
+    color: darkgray;
+    line-height: 1.7;
+}
+.container .info .btn{
+    background-color: goldenrod ;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.4s;
+    border: none;
+}
+
+
+
+/* end About */
+
+
+/* start menu */
+
+.menu{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+.menu h1{
+text-transform: uppercase;
+font-weight: bold;
+font-size: 40px;
+text-align: center;
+transition: 1s;
+}
+.menu h1 span{
+    color: goldenrod;
+}
+.menu .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    gap: 30px;
+
+}
+.menu .container .box{
+    border: 1px solid rgb(151, 151, 151);
+    margin-top: 20px;
+    transition: 0.3s;
+  
+}
+.menu .container .box:hover {
+
+    color: black;
+    transform: scale(0.9);
+    box-shadow: rgba(133, 133, 140, 0.25) 0px 50px 100px -20px, rgba(205, 205, 205, 0.3) 0px 30px 60px -30px, rgba(193, 205, 218, 0.35) 0px -2px 6px 0px inset;
+}
+
+.menu .container .box img{
+   height: 100px;
+   width: 100px;
+    cursor: pointer;
+    padding-top: 15px;
+    border-radius: 50%;
+ 
+}
+.menu .box h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.menu .box p{
+    font-size: 20px;
+}
+.menu p span{
+    color: goldenrod;
+}
+.menu .btn{
+    background-color: goldenrod ;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.4s;
+    border: none;
+  margin-bottom: 15px;
+}
+/* end menu */
+
+
+
+
+
+/* start product */
+.product{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+.product .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    gap: 30px;
+}
+.product .container .box{
+    border: 1px solid rgb(115, 115, 115);
+    margin-top: 20px;
+    transition: 0.3s;
+  
+}
+.product .icons{
+    margin: 15px 0;
+}
+.product .icons i{
+    border: 1px solid rgb(115, 115, 115);
+    padding: 13px;
+    font-size: 20px;
+    margin-left: 6px;
+    cursor: pointer;
+    transition:0.4s;
+    border-radius: 4px;
+    border: none;
+}
+.product .icons i:hover{
+    background-color: goldenrod;
+}
+.product img{
+    width: 60%;
+}
+
+.product .btn{
+    background-color: goldenrod ;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.4s;
+    border: none;
+  margin-bottom: 15px;
+}
+/* end  product*/
+
+
+
+/* start  review*/
+.costumer{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+.costumer .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    gap: 30px;
+}
+.costumer .box{
+    border: 1px solid rgb(115, 115, 115);
+    margin-top: 20px;
+    transition: 0.3;
+    padding: 12px;
+}
+.costumer img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 15px 0;
+}
+.costumer h1{
+
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 40px;
+        text-align: center;
+        transition: 1s;
+
+    
+            
+  
+}
+.costumer h1 span{
+    color: goldenrod;
+}
+.costumer .icons i{
+    color: goldenrod;
+    font-size: 50px;
+    margin-top: 20px;
+}
+.costumer p{
+    color: gray;
+    font-size: 16px;
+    line-height: 1.6;
+}
+.costumer .icon{
+    margin: 10px 0;
+}
+.costumer .icon i:not(:last-child){
+    color: goldenrod;
+}
+/* end  review*/
+
+
+
+
+
+/* start  Contact*/
+
+.contact{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+.contact h1{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+    transition: 1s;
+}
+.contact h1 span{
+    color: goldenrod;
+}
+
+   
+
+.form {
+ padding: 20px;
+ background-color: rgb(22, 22, 31);
+ width: 70%;
+ margin: 15px auto;
+ 
+}
+
+
+.form input{
+position: relative;
+width: 60%;
+padding: 20px 20px;
+margin: 10px;
+
+background-color: transparent;
+border: 1px solid grey;
+}
+
+.form .inp input i{
+    position: absolute;
+   
+}
+.btn{
+    background-color: goldenrod ;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.4s;
+    border: none;
+  margin-bottom: 15px;
+}
+/* end  review*/
+
+
+/* start footer */
+
+footer{
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+
+}
+footer h3{
+    padding: 15px;
+    color: rgb(0, 0, 0);
+}
+
+footer h3 span {
+color: goldenrod;
+}
